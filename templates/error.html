@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+{% block title %}
+Error
+{% endblock title %}
+{% block body %}
+<div class="error">
+  <br>
+<h2> {{message}} </h2>
+</div>
+<center>
+<button type="button" class="btn btn-dark" style="background-color: black;">
+  <a href="/register" style="color: beige;">Try Again!</a> </button>
+</center>
+{% endblock body %}

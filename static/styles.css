@@ -1,0 +1,64 @@
+body,html{
+  background-color:inherit;
+  height: 100%;
+}
+.big-banner{
+  background-image: url("images/book-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  width:100%;
+  display: block;
+  overflow-y: scroll;
+}
+p{
+  font-weight: bold;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: medium;
+  color: beige;
+}
+
+.but {
+  font: bold 11px Arial;
+  text-decoration: none;
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+}
+
+.error{
+  text-align: center;
+  justify-content: center;
+  vertical-align: middle;
+  color: beige;
+}
+
+.card-header,.card-footer{
+  background-color: #e6bae4;
+}
+.card-body{
+  background-color: #e8dce8;
+}
+
+@media (min-width:568px)
+{
+  .big-banner{
+    height: 100%;
+  }
+  p{
+    font-weight: lighter;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: large;
+  }
+}
+
+@media (min-height:232px)
+{
+  .big-banner{
+    height: 100%;
+  }
+}

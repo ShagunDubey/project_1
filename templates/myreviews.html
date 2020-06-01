@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+  Reviews By You
+{% endblock title %}
+
+{% block links %}
+{% endblock links %}
+
+{% block body %}
+<div class="container" style="margin-bottom: 2%;">
+  {% if not myrev %}
+    <p class="py-5 px-5">You haven't reviewed a book yet!</p>
+  {% else %}
+    <p class="py-5 px-5">Here's a list of books you have reviewed:</p>
+    {% for review in myrev %}
+    <div class="card">
+      <div class="card-body" style="background-color: white;">
+        <div class="card-text">{{review['title']}}: {{review['comment']}}
+          <div style="float: right;"> {{review['date']}} </div>
+        </div>
+        <div class="card-text">Rating: 
+          {% for i in range(review['rating']) %}
+            <span class="fa fa-star checked" style="color: gold;"></span>
+  
+          {% endfor %}
+          {% for i in range(5-review['rating']) %}
+              <span class="fa fa-star" style="color: grey; opacity: 0.5;"></span>
+          {% endfor %}
+          {{review['rating']}} out of 5
+          <div style="float: right;">
+            <button id="#bu" style="border-radius: 5%; background-color: #bab9b5; border: antiquewhite; ">
+              <a id="#al" href="/myreviews/{{review['isbn']}}" style="color: navy;">Delete review  
+                <i class="fa fa-trash-o" style="color: #ff000f;"> </i> </a>
+            </button>
+        </div>
+  
+      </div>
+      <div class="dropdown-divider"></div>
+    </div>
+    {% endfor %}
+  {% endif %}
+  </div>
+  <br>
+{% endblock body %}

@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+{% block title %}
+  Welcome
+{% endblock title %}
+{% block body %}
+
+    <div class = "container-fluid">
+        <div class="row">
+            <div class ="col-lg-4 col-md-6 col-12">
+                <p class="float-sm-left py-5 px-5">
+                  Welcome to Bibliophilic Me!<br>
+                  Have a book in mind? Find out what others have to say about it!
+                </p>
+            </div>
+            <div class ="col-lg-4 col-md-6 col-12"></div>
+            <div class ="col-lg-4 col-md-6 col-12"></div>
+        </div>
+
+  {% if session["log"] %}
+    <p class="py-5 px-5">View past activity 
+    <button class="btn btn-light" style="border-radius: 10%;"><a href="/myreviews" style="color: black;">See Now</a></button> 
+    </p>  
+    
+  {% endif %}
+    </div>
+
+{% endblock body %}

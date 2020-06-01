@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+{% block title %}
+  Search Result
+{% endblock title %}
+{% block body %}
+<div class="card-columns container" style="margin-top: 5%;">
+{% for book in result %}
+  <div class="card">
+    <div class="card-header text-center">Title: {{book['title']}}</div>
+    
+    <!-- <img src="https://covers.openlibrary.org/b/isbn/{{book['isbn']}}.jpg" class="card-img-top" alt="..." height="250px"> -->
+    <div class="card-body text-center">
+      <h6 class="card-text">Author: {{book['author']}}</h6>
+      <h6 class="card-text">Publication Year: {{book['year']}}</h6>
+      <h6 class="card-text">ISBN number: {{book['isbn']}}</h6>
+    </div>
+    <div class="card-footer">
+      <a class="card-link" href="/search/{{book['isbn']}}">View Reviews</a> 
+    </div>
+  </div>
+  
+{% endfor %}
+</div>
+{% endblock body %}
